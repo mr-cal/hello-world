@@ -1,0 +1,16 @@
+name: hello-world
+base: core22
+version: '1.0'
+summary: 'hello-world'
+description: Hello World Snap
+grade: devel
+confinement: devmode
+
+apps:
+  hello-world:
+    command: main.sh
+
+parts:
+  hello-world:
+    plugin: dump
+    source: .

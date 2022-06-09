@@ -1,0 +1,22 @@
+name: Snap Packaging
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  Snap:
+    runs-on: ubuntu-20.04
+    name: Snap
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Building & Packaging
+        id: snap_build
+        uses: snapcore/action-build@v1
+        with:
+          snapcraft-channel: latest/edge/pr-3786
+          snapcraft-args: --trace
